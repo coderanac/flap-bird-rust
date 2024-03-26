@@ -43,7 +43,7 @@ impl GameState {
         })
     }
 
-    fn add_obstacle(&mut self, ctx: &mut Context) {
+    fn add_obstacle(&mut self, _ctx: &mut Context) {
         let mut rng = rand::thread_rng();
         let gap_y = rng.gen_range(200.0..400.0);
         let gap_height = 150.0;
