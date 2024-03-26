@@ -33,7 +33,7 @@ impl GameState {
     fn new(ctx: &mut Context) -> GameResult<GameState> {
         let bird_image = Image::new(ctx, "/bird.png")?;
         Ok(GameState {
-            state: Game::Menu, // Começa no menu
+            state: Game::Menu,
             bird_image,
             bird_pos: [50.0, 50.0],
             bird_velocity: 0.0,
@@ -93,7 +93,7 @@ impl GameState {
     }
 
     fn score(&mut self) {
-        let bird_x = self.bird_pos[0] + (self.bird_image.width() as f32 * 0.15); // Considerando a largura do pássaro após escala.
+        let bird_x = self.bird_pos[0] + (self.bird_image.width() as f32 * 0.15);
         for obstacle in &mut self.obstacles {
             if !obstacle.passed && bird_x > obstacle.top.x + obstacle.top.w {
                 obstacle.passed = true;
