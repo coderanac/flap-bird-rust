@@ -15,8 +15,8 @@ pub struct GameState {
 }
 
 impl GameState {
-    pub fn new(ctx: &mut Context) -> GameResult<GameState> {
-        let bird_image = Image::new(ctx, "/bird.png")?;
+    pub fn new(ctx: &mut Context, bird_image_bytes: &'static [u8]) -> GameResult<GameState> {
+        let bird_image = Image::from_bytes(ctx, bird_image_bytes)?;
         Ok(GameState {
             state: Game::Menu,
             bird_image,
